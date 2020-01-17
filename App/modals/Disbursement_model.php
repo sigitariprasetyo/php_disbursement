@@ -46,4 +46,40 @@ class Disbursement_model {
     $this->db->query('SELECT * FROM ' . $this->table);
     return $this->db->resultSet();
   }
+
+  public function findById($id) {
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $this->url . "/$id");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_USERPWD, "$this->key:");
+
+    $result = curl_exec($ch);
+    $result = json_decode($result, true);
+    curl_close($ch);
+
+    $this->updateDb($result);
+    return $this->getDetailLocal($id);
+  }
+
+  public function updateDb($result) {
+    $query = 'UPDATE ' . $this->table . ' SET 
+                  status = :status,
+                  receipt = :receipt,
+                  time_served = :time_served
+              WHERE id = :id';
+    $this->db->query($query);
+    $this->db->bind('id', $result['id']);
+    $this->db->bind('status', $result['status']);
+    $this->db->bind('receipt', $result['receipt']);
+    $this->db->bind('time_served', $result['time_served']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
+
+  public function getDetailLocal($id) {
+    $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+    $this->db->bind('id', $id);
+    return $this->db->single();
+  }
 }

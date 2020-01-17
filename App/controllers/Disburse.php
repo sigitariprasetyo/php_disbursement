@@ -6,7 +6,7 @@ class Disburse extends Controller {
     $data['disbursement'] = $this->model('Disbursement_model')->findAll();
 
     $this->view('templates/header', $data);
-    $this->view('home/index', $data);
+    $this->view('disburse/index', $data);
     $this->view('templates/footer');
   }
 
@@ -15,5 +15,14 @@ class Disburse extends Controller {
       header('Location: ' . BASEURL . '/disburse');
       exit;
     }
+  }
+
+  public function detail($id) {
+    $data['judul'] = 'Detail Disbursement';
+    $data['disbursement'] = $this->model('Disbursement_model')->findById($id);
+
+    $this->view('templates/header', $data);
+    $this->view('disburse/detail', $data);
+    $this->view('templates/footer');
   }
 }
