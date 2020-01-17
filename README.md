@@ -2,7 +2,7 @@
 
 ------
 
-URL : *localhost/public/disburse*
+URL : *http://localhost/php_disbursement/public/*
 
 ### Langkah - Langkah :
 
@@ -16,4 +16,4 @@ URL : *localhost/public/disburse*
 
 3. Import file migration kedalam phpMyAdmin atau Copy syntax yang ada didalam file migration.sql kemudian paste dan run
 
-4. Buka baseURL : *localhost/public/disburse*
+4. Buka baseURL : *http://localhost/php_disbursement/public/*
