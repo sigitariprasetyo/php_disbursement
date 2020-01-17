@@ -1,7 +1,7 @@
 <div class="row mt-3">
   <div class="col-12">
     <h3>All Disbursement</h3>
-    <button type="button" class="btn btn-primary btn-sm my-1" data-toggle="modal" data-target="#formModal">
+    <button type="button" class="btn btn-primary btn-sm my-1" data-toggle="modal" data-target="#formModalAdd">
   Add Disbursement 
     </button>
     <table class="table">
@@ -32,8 +32,8 @@
 </div>
 
 
-// Modal Add Disbursement
-<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="judulModal" aria-hidden="true">
+<!-- Modal Add Disbursement -->
+<div class="modal fade" id="formModalAdd" tabindex="-1" role="dialog" aria-labelledby="judulModal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
