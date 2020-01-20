@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/bootstrap.css" crossorigin="anonymous">
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/style.css" />
-  <title><?= $data['judul']; ?></title>
+  <title>Disbursement</title>
 </head>
 <body>
 

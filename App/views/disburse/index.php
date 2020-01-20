@@ -16,7 +16,7 @@
         </tr>
       </thead>
       <tbody>
-        <?php foreach( $data['disbursement'] as $data ) : ?>
+        <?php if(isset($data['disbursement'])) foreach( $data['disbursement'] as $data ) : ?>
           <tr>
             <td scope="row"><?= $data['id']; ?></td>
             <td><?= $data['bank_code']; ?></td>

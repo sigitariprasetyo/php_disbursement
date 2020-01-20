@@ -18,7 +18,7 @@
   </thead>
   <tbody>
     <tr>
-      <td scope="row"><?= $data['disbursement']['id']; ?></td>
+      <td scope="row"><?php if (isset($data['disbursement'])) echo $data['disbursement']['id']; ?></td>
       <td><?= $data['disbursement']['account_number']; ?></td>
       <td><?= $data['disbursement']['bank_code']; ?></td>
       <td><?= $data['disbursement']['beneficiary_name']; ?></td>
